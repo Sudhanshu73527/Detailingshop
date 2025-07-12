@@ -4,7 +4,7 @@ import CeramicIcon from "../../assets/creamic.webp";
 import ClarityIcon from "../../assets/Clarity.webp";
 import PpfIcon from "../../assets/paint.webp";
 import DentPaintIcon from "../../assets/CARDENTING.webp";
-import WashIcon from "../../assets/CARWASh.webp";
+import WashIcon from "../../assets/CARWASH.webp";
 import GlassIcon from "../../assets/glassfilm.webp";
 
 const services = [
