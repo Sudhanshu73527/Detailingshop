@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import CeramicIcon from "../../assets/creamic.webp";
 import ClarityIcon from "../../assets/Clarity.webp";
-import PpfIcon from "../../assets/Paint.webp";
+import PpfIcon from "../../assets/paint.webp";
 import DentPaintIcon from "../../assets/CARDENTING.webp";
 import WashIcon from "../../assets/CARWASh.webp";
 import GlassIcon from "../../assets/glassfilm.webp";
