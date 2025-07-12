@@ -10,6 +10,9 @@ import HeroQuote from "./Components/HeroQuote/HeroQuote";
 import DetailingStreetBanner from "./Components/DetailingStreetBanner/DetailingStreetBanner";
 import FaqSection from "./Components/FaqSection/FaqSection";
 import OurPartners from "./Components/OurPartners/OurPartners";
+import Services from "./Components/Services/Services";
+import ContactSection from "./Components/contactsection/ContactSection";
+import StatsSection from "./Components/StatsSection/StatsSection";
 
 const Page = ({ name }) => (
   <div className="mt-24 p-6 text-center text-2xl">{name} Page</div>
@@ -34,6 +37,9 @@ function App() {
       <DetailingStreetBanner/>
       <FaqSection/>
       <OurPartners/>
+      <Services/>
+      <StatsSection/>
+      <ContactSection/>
       <Footer/>
     </Router>
   );

@@ -35,8 +35,8 @@ const DetailingStreetBanner = () => {
           className="flex items-center gap-2 md:gap-6 whitespace-nowrap"
         >
           <h1 className="text-[32px] md:text-[80px] font-black uppercase tracking-wide">
-            <span className="text-red-700">God-</span>
-            <span className="text-gray-400">Detailing</span>
+            <span className="text-red-600">God-</span>
+            <span className="text-gray-800">Detailing</span>
           </h1>
           <img
             src={carTopView}

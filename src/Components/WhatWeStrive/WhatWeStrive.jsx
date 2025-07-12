@@ -14,19 +14,19 @@ const WhatWeStrive = () => {
   const [showModal, setShowModal] = useState(false);
 
   const paragraph1 =
-    "At The Detailing Mafia,  your car’s personality — turning nice ride into jaw-dropping beauty. We don’t settle for clean; we deliver extraordinary.";
+    "At The Detailing Mafia, your car’s personality — turning nice ride into jaw-dropping beauty. We don’t settle for clean; we deliver extraordinary.";
   const paragraph2 =
     "Our ceramic coating and paint protection film services are precision-driven. Let our skilled artists treat your vehicle with glossy perfection.";
   const paragraph3 =
     "Leave your car with us and prepare to pick up a masterpiece. We revive, restore, and reimagine — every time.";
 
   const tooltipMap = {
-    "Detailing": "The art of perfect car surface restoration.",
-    "Mafia": "Our elite detailing crew.",
-    "ceramic": "Advanced nano-coating for long-term shine.",
-    "coating": "Protective layer that bonds with paint.",
-    "film": "Invisible shield against scratches & UV.",
-    "protection": "Guards paint from elements & debris.",
+    Detailing: "The art of perfect car surface restoration.",
+    Mafia: "Our elite detailing crew.",
+    ceramic: "Advanced nano-coating for long-term shine.",
+    coating: "Protective layer that bonds with paint.",
+    film: "Invisible shield against scratches & UV.",
+    protection: "Guards paint from elements & debris.",
   };
 
   const renderWithTooltips = (text) =>
@@ -34,8 +34,8 @@ const WhatWeStrive = () => {
       const clean = word.replace(/[^\w]/g, "");
       const tip = tooltipMap[clean];
       return tip ? (
-        <Tippy key={idx} content={tip}>
-          <span className="underline underline-offset-2 decoration-dotted font-semibold cursor-help text-black">
+        <Tippy key={idx} content={tip} delay={[100, 50]} animation="shift-away" placement="top">
+          <span className="underline underline-offset-4 decoration-dotted font-semibold cursor-help text-red-700 hover:text-red-900 transition">
             {word}{" "}
           </span>
         </Tippy>
@@ -71,29 +71,18 @@ const WhatWeStrive = () => {
             </h3>
           </motion.div>
 
-          <motion.p
-            className="mt-6 text-gray-700 text-base leading-relaxed tracking-wide"
-            variants={fadeUp}
-          >
-            {renderWithTooltips(paragraph1)}
-          </motion.p>
+          {[paragraph1, paragraph2, paragraph3].map((para, idx) => (
+            <motion.p
+              key={idx}
+              className="mt-5 bg-white/80 px-5 py-4 rounded-md shadow-sm text-[1.05rem] sm:text-[1.1rem] text-gray-800 leading-[1.9] border-l-4 border-red-500"
+              variants={fadeUp}
+            >
+              {renderWithTooltips(para)}
+            </motion.p>
+          ))}
 
           <motion.p
-            className="mt-4 text-gray-700 text-base leading-relaxed tracking-wide"
-            variants={fadeUp}
-          >
-            {renderWithTooltips(paragraph2)}
-          </motion.p>
-
-          <motion.p
-            className="mt-4 text-gray-700 text-base leading-relaxed tracking-wide"
-            variants={fadeUp}
-          >
-            {renderWithTooltips(paragraph3)}
-          </motion.p>
-
-          <motion.p
-            className="mt-6 text-lg font-semibold text-black"
+            className="mt-6 text-lg font-semibold text-black italic  underline-offset-4 decoration-red-500"
             variants={fadeUp}
           >
             Give your neighbours something to talk about.
@@ -107,7 +96,7 @@ const WhatWeStrive = () => {
           >
             <button
               onClick={() => setShowModal(true)}
-              className="bg-red-600 text-white px-6 py-3 rounded-md font-semibold shadow-lg hover:bg-red-700 transition"
+              className="bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 rounded-md font-semibold shadow-lg hover:from-red-700 hover:to-red-800 transition"
             >
               View Gallery
             </button>
@@ -125,7 +114,7 @@ const WhatWeStrive = () => {
           <motion.img
             src={carImage}
             alt="Supercar"
-            className="w-[100%] max-w-[600px] object-contain rounded-xl "
+            className="w-[100%] max-w-[600px] object-contain rounded-xl"
             whileHover={{
               scale: 1.05,
               rotate: [0, 1, -1, 0],

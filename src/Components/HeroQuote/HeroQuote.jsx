@@ -32,7 +32,7 @@ const HeroQuote = () => {
             <motion.img
               src={carImage}
               alt="Luxury Car"
-              className="max-w-[90%] md:max-w-[600px] drop-shadow-2xl rounded-xl"
+              className="max-w-[100%] md:max-w-[600px] drop-shadow-2xl rounded-xl"
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
@@ -87,15 +87,15 @@ const HeroQuote = () => {
 
         {/* Text Content */}
         <motion.div
-          className="w-full md:w-1/2 flex flex-col justify-center p-8 md:px-12"
+          className="w-full md:w-1/2 flex flex-col justify-center p-8 md:px-12 text-left"
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl md:text-4xl font-extrabold italic text-black text-center md:text-left mb-6">
+          <h2 className="text-2xl md:text-4xl font-extrabold italic text-black mb-6">
             “<span className="text-red-600">God Detailing</span> is not a skill,
-            <br />
+            <br className="hidden md:block" />
             It's an Attitude!”
           </h2>
 
@@ -127,7 +127,7 @@ const HeroQuote = () => {
         </motion.div>
       </div>
 
-      {/* 🪟 Modal Overlay */}
+      {/* Modal */}
       {modalContent && (
         <motion.div
           className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center"
