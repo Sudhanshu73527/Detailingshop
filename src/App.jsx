@@ -35,11 +35,11 @@ function App() {
       <ServiceIcons/>
       {/* <OtherServices/> */}
       <DetailingStreetBanner/>
-      <FaqSection/>
       <OurPartners/>
       <Services/>
       <StatsSection/>
       <ContactSection/>
+      <FaqSection/>
       <Footer/>
     </Router>
   );

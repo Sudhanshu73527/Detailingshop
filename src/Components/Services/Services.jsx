@@ -1,10 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
 
 import Ceramic from "../../assets/creamicc.jpg";
 import Ppf from "../../assets/ppf.webp";
@@ -59,46 +55,6 @@ const services = [
 ];
 
 const Services = () => {
-  const [selectedService, setSelectedService] = useState(null);
-
-  const Card = ({ service }) => (
-    <motion.div
-      whileHover={{ scale: 1.03 }}
-      tabIndex={0}
-      className="group bg-gradient-to-br from-neutral-800 to-black rounded-xl overflow-hidden border border-neutral-700 hover:shadow-lg hover:shadow-red-500/100 focus:shadow-red-500/30 active:shadow-red-500/30 transition duration-300 flex flex-col"
-    >
-      <div className="relative">
-        <img
-          src={service.image}
-          alt={service.title}
-          className="w-full h-40 object-cover"
-        />
-        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-          <FaArrowRight className="text-white text-lg" />
-        </div>
-      </div>
-      <div className="p-5 flex flex-col flex-grow justify-between">
-        <div>
-          <h3 className="text-xl font-bold mb-1 text-white group-hover:text-red-500 uppercase transition">
-            {service.title}
-          </h3>
-          <p className="text-sm text-gray-400 transition">
-            {service.description}
-          </p>
-          <p className="mt-2 text-xs text-gray-500 uppercase">
-            Category: {service.category}
-          </p>
-        </div>
-        <button
-          onClick={() => setSelectedService(service)}
-          className="mt-5 bg-red-600 text-white text-sm font-semibold py-2 px-4 rounded hover:bg-red-700 transition self-start"
-        >
-          View Package
-        </button>
-      </div>
-    </motion.div>
-  );
-
   return (
     <section className="bg-black text-white py-12 px-4 md:px-12">
       <div className="text-center mb-10">
@@ -113,47 +69,44 @@ const Services = () => {
         </p>
       </div>
 
-      {/* Swiper for Mobile */}
-      <div className="block md:hidden">
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={20}
-          pagination={{ clickable: true }}
-          modules={[Pagination]}
-        >
-          {services.map((service, index) => (
-            <SwiperSlide key={index}>
-              <Card service={service} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
-      {/* Grid for Desktop */}
-      <div className="hidden md:grid grid-cols-3 gap-6">
+      {/* Responsive grid: 1 column on mobile, 2 on small, 3 on medium+ */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6">
         {services.map((service, index) => (
-          <Card key={index} service={service} />
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            key={index}
+            tabIndex={0}
+            className="group bg-gradient-to-br from-neutral-800 to-black rounded-xl overflow-hidden border border-neutral-700 hover:shadow-lg hover:shadow-red-500/100 focus:shadow-red-500/30 active:shadow-red-500/30 transition duration-300 flex flex-col"
+          >
+            <div className="relative">
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-40 object-cover"
+              />
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                <FaArrowRight className="text-white text-lg" />
+              </div>
+            </div>
+            <div className="p-5 flex flex-col flex-grow justify-between">
+              <div>
+                <h3 className="text-xl font-bold mb-1 text-white group-hover:text-red-500 uppercase transition">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-gray-400 transition">
+                  {service.description}
+                </p>
+                <p className="mt-2 text-xs text-gray-500 uppercase">
+                  Category: {service.category}
+                </p>
+              </div>
+              <button className="mt-5 bg-red-600 text-white text-sm font-semibold py-2 px-4 rounded hover:bg-red-700 transition self-start">
+                View Package
+              </button>
+            </div>
+          </motion.div>
         ))}
       </div>
-
-      {/* Modal */}
-      {selectedService && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-          <div className="bg-white text-black p-6 rounded-md max-w-md">
-            <h3 className="text-xl font-bold">{selectedService.title}</h3>
-            <p className="mt-2">{selectedService.description}</p>
-            <p className="text-xs mt-1 uppercase text-gray-600">
-              Category: {selectedService.category}
-            </p>
-            <button
-              className="mt-4 text-sm bg-red-600 px-4 py-2 text-white rounded hover:bg-red-700"
-              onClick={() => setSelectedService(null)}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
