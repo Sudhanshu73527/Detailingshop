@@ -14,7 +14,7 @@ const WhatWeStrive = () => {
   const [showModal, setShowModal] = useState(false);
 
   const paragraph1 =
-    "At The Detailing Mafia, your car’s personality — turning nice ride into jaw-dropping beauty. We don’t settle for clean; we deliver extraordinary.";
+    "At The God Detailing , your car’s personality — turning nice ride into jaw-dropping beauty. We don’t settle for clean; we deliver extraordinary.";
   const paragraph2 =
     "Our ceramic coating and paint protection film services are precision-driven. Let our skilled artists treat your vehicle with glossy perfection.";
   const paragraph3 =
