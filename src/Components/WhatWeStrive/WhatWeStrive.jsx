@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import carImage from "../../assets/car4.webp";
+import img1 from "../../assets/autocar1.webp"
 import GalleryModal from "../GalleryModal/GalleryModal";
 
 const fadeUp = {
@@ -14,7 +15,7 @@ const WhatWeStrive = () => {
   const [showModal, setShowModal] = useState(false);
 
   const paragraph1 =
-    "At The God Detailing , your car’s personality — turning nice ride into jaw-dropping beauty. We don’t settle for clean; we deliver extraordinary.";
+    "At The Auto Car Spa , your car’s personality — turning nice ride into jaw-dropping beauty. We don’t settle for clean; we deliver extraordinary.";
   const paragraph2 =
     "Our ceramic coating and paint protection film services are precision-driven. Let our skilled artists treat your vehicle with glossy perfection.";
   const paragraph3 =

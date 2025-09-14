@@ -9,7 +9,7 @@ import HeroQuote from "./Components/HeroQuote/HeroQuote";
 // import OtherServices from "./Components/OtherServices/OtherServices";
 import DetailingStreetBanner from "./Components/DetailingStreetBanner/DetailingStreetBanner";
 import FaqSection from "./Components/FaqSection/FaqSection";
-import OurPartners from "./Components/OurPartners/OurPartners";
+// import OurPartners from "./Components/OurPartners/OurPartners";
 import Services from "./Components/Services/Services";
 import ContactSection from "./Components/contactsection/ContactSection";
 import StatsSection from "./Components/StatsSection/StatsSection";
@@ -35,7 +35,7 @@ function App() {
       <ServiceIcons/>
       {/* <OtherServices/> */}
       <DetailingStreetBanner/>
-      <OurPartners/>
+      {/* <OurPartners/> */}
       <Services/>
       <StatsSection/>
       <ContactSection/>

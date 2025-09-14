@@ -5,11 +5,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import g1 from "../../assets/car1.jpg";
-import g2 from "../../assets/car2.jpg";
-import g3 from "../../assets/car4.webp";
-
-const images = [g1, g2, g3];
+import g1 from "../../assets/autocar1.webp";
+import g2 from "../../assets/autocar2.webp";
+import g3 from "../../assets/autocar3.webp";
+import g4 from "../../assets/autocar4.webp"
+import g5 from "../../assets/autocar5.webp"
+const images = [g1, g2, g3, g4,g5];
 
 const GalleryModal = ({ onClose }) => {
   return (

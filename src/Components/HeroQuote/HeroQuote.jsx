@@ -94,13 +94,13 @@ const HeroQuote = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl md:text-4xl font-extrabold italic text-black mb-6">
-            “<span className="text-red-600">God Detailing</span> is not a skill,
+            “<span className="text-red-600">Auto Car Spa</span> is not a skill,
             <br className="hidden md:block" />
             It's an Attitude!”
           </h2>
 
           {[
-            "Welcome to The God Detailing  – your one-stop destination for elite car care services. We believe “Perfection is in the Detail”, and that is the philosophy that drives our team. Our passionate professionals transform even the most tired vehicles into road-ready masterpieces.",
+            "Welcome to The Auto Car Spa  – your one-stop destination for elite car care services. We believe “Perfection is in the Detail”, and that is the philosophy that drives our team. Our passionate professionals transform even the most tired vehicles into road-ready masterpieces.",
             "From Ceramic Coatings to Paint Protection Films, from Clarity Coat to premium car wash treatments – every product and process is handpicked and customized to meet your car’s unique needs. Experience the finesse and finish only true detailing experts can provide.",
           ].map((para, idx) => (
             <motion.p

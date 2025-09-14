@@ -2,56 +2,27 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 
+import wash from "../../assets/wash.webp"; // you can replace images for each service
+import steam from "../../assets/steam.jpeg";
 import Ceramic from "../../assets/creamicc.jpg";
 import Ppf from "../../assets/ppf.webp";
-import Spray from "../../assets/spray.jpg";
-import windoww from "../../assets/windoww.webp";
-import steam from "../../assets/steam.jpeg";
-import wash from "../../assets/wash.webp";
 
 const services = [
-  {
-    title: "Ceramic Coating",
-    image: Ceramic,
-    description:
-      "Cosmetica & Opti-Coat for long-lasting paint shine. Super gloss and hydrophobic finish.",
-    category: "safe",
-  },
-  {
-    title: "Paint Protection Film (PPF)",
-    image: Ppf,
-    description:
-      "UltrashieldX PPF with self-healing properties. Click for detailed PPF packages.",
-    category: "safe",
-  },
-  {
-    title: "Spray-On PPF / Peelable Paint",
-    image: Spray,
-    description:
-      "Customizable color and finish options. Durable and removable protection.",
-    category: "safe",
-  },
-  {
-    title: "Window Films",
-    image: windoww,
-    description:
-      "UV and heat protection films. Enhances privacy and comfort. Click for film options.",
-    category: "safe",
-  },
-  {
-    title: "Steam Wash",
-    image: steam,
-    description:
-      "Eco-friendly deep cleaning for exterior and interior. Sanitizes and refreshes.",
-    category: "ravi",
-  },
-  {
-    title: "Maintenance Wash",
-    image: wash,
-    description:
-      "Regular upkeep to maintain vehicle appearance. Keeps your car looking its best.",
-    category: "sunny",
-  },
+  { title: "Car Wash & Services", image: wash, description: "Complete exterior and interior car wash with premium shampoos for a spotless finish." },
+  { title: "Foam Wash", image: wash, description: "Thick snow foam wash that gently removes dirt without scratching your car’s paint." },
+  // { title: "Paint Correction", image: spray, description: "Removes swirl marks, light scratches, and oxidation for a glossy finish." },
+  { title: "Interior Detailing", image: steam, description: "Deep cleaning of dashboard, seats, carpets, vents, and trims for a fresh cabin." },
+  { title: "Steam Cleaning", image: steam, description: "Eco-friendly steam cleaning for sanitizing and removing stubborn stains." },
+  { title: "Clay Bar Treatment", image: wash, description: "Removes embedded contaminants from the paint surface for silky-smooth finish." },
+  { title: "Headlight Restoration", image: wash, description: "Restores cloudy headlights, improving clarity and nighttime visibility." },
+  { title: "Wheel Polishing", image: wash, description: "Brings back shine to your alloy wheels and removes brake dust buildup." },
+  { title: "Ceramic Coating", image: Ceramic, description: "Premium ceramic coating for long-lasting shine, hydrophobic effect, and paint protection." },
+  { title: "PPF Coating", image: Ppf, description: "Self-healing Paint Protection Film to protect against scratches, chips, and UV damage." },
+  { title: "Graphene Coating", image: Ceramic, description: "Advanced graphene-based coating for extreme gloss, durability, and water repellency." },
+  { title: "Carbon Coating", image: Ceramic, description: "Durable carbon coating to keep your paint safe and looking new for years." },
+  { title: "Polymer Coating", image: Ceramic, description: "Cost-effective coating solution for gloss and basic paint protection." },
+  { title: "Carnauba Wax", image: Ceramic, description: "High-quality carnauba wax for a warm, deep shine and water beading effect." },
+  { title: "AC Vent & Coil Cleaning", image: steam, description: "Cleans AC vents and coils to improve airflow and eliminate odor-causing bacteria." },
 ];
 
 const Services = () => {
@@ -63,20 +34,17 @@ const Services = () => {
           <span className="text-red-600">SERVICES</span>
         </h2>
         <p className="mt-3 text-gray-300 max-w-2xl mx-auto text-sm">
-          Discover a comprehensive range of professional automotive detailing
-          services, meticulously designed to enhance, protect, and rejuvenate
-          your vehicle.
+          Premium automotive care services designed to enhance, protect, and rejuvenate your car inside and out.
         </p>
       </div>
 
-      {/* Responsive grid: 1 column on mobile, 2 on small, 3 on medium+ */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6">
         {services.map((service, index) => (
           <motion.div
             whileHover={{ scale: 1.03 }}
             key={index}
             tabIndex={0}
-            className="group bg-gradient-to-br from-neutral-800 to-black rounded-xl overflow-hidden border border-neutral-700 hover:shadow-lg hover:shadow-red-500/100 focus:shadow-red-500/30 active:shadow-red-500/30 transition duration-300 flex flex-col"
+            className="group bg-gradient-to-br from-neutral-800 to-black rounded-xl overflow-hidden border border-neutral-700 hover:shadow-lg hover:shadow-red-500/100 transition duration-300 flex flex-col"
           >
             <div className="relative">
               <img
@@ -93,12 +61,7 @@ const Services = () => {
                 <h3 className="text-xl font-bold mb-1 text-white group-hover:text-red-500 uppercase transition">
                   {service.title}
                 </h3>
-                <p className="text-sm text-gray-400 transition">
-                  {service.description}
-                </p>
-                <p className="mt-2 text-xs text-gray-500 uppercase">
-                  Category: {service.category}
-                </p>
+                <p className="text-sm text-gray-400">{service.description}</p>
               </div>
               <button className="mt-5 bg-red-600 text-white text-sm font-semibold py-2 px-4 rounded hover:bg-red-700 transition self-start">
                 View Package
