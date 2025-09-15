@@ -7,7 +7,8 @@ import logo from "../../assets/carspa2.png";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  { name: "Service", path: "/blog" },
+  { name: "Service", path: "/service" },
+  { name: "Gallary", path: "/gallary" },
   { name: "Contact", path: "/contact" },
 ];
 

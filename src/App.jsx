@@ -20,7 +20,7 @@ const Page = ({ name }) => (
 
 function App() {
   return (
-    <Router>
+    <>
       <Navbar /> 
       {/* <Routes>
         <Route path="/" element={<Page name="Home" />} />
@@ -41,7 +41,7 @@ function App() {
       <ContactSection/>
       <FaqSection/>
       <Footer/>
-    </Router>
+    </>
   );
 }
 
