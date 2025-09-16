@@ -94,15 +94,85 @@
 
 
 
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <div>
-      you are not live 🐱‍🏍🐱‍🏍🐱‍🐉
-    </div>
-  )
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-indigo-50 via-white to-green-50 p-6">
+      <div className="max-w-6xl w-full bg-white/70 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-6 items-center p-6 lg:p-12">
+        {/* Left: GIF */}
+        <motion.div
+          className="flex items-center justify-center"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <img
+            src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif"
+            alt="buy domain GIF"
+            className="w-72 h-72 object-cover rounded-xl shadow-lg"
+            loading="lazy"
+          />
+        </motion.div>
+
+        {/* Right: Content */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.6 }}
+          className="px-2 md:px-6"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <span className="inline-flex items-center gap-2 bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium animate-pulse">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M12 6v6" />
+              </svg>
+              Not Live
+            </span>
+            <span className="text-xs text-slate-500">(Buy a domain to go live)</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 leading-tight mb-4">
+            You are not live.
+            <br />
+            Get your domain & go online today.
+          </h1>
+
+          <p className="text-slate-600 mb-6">
+            Your site is ready — it just needs a domain. Secure a memorable domain name, connect it, and we’ll make your project visible to the world. Fast setup, SSL included, and full support from our team.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+            <a
+              href="https://www.godaddy.com/" 
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold px-5 py-3 rounded-lg shadow-lg hover:scale-[1.02] transition-transform"
+            >
+              Buy Domain
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 opacity-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+
+            <button
+              onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
+              className="text-slate-700 bg-slate-100 px-4 py-2 rounded-lg border border-slate-200 hover:bg-slate-200 transition"
+            >
+              Need help connecting? Contact us
+            </button>
+          </div>
+
+          <div className="mt-6 text-sm text-slate-500">
+            <strong>Tip:</strong> Choose a short, brandable domain (eg. yourbrand.com) — avoid long hyphenated names for better recall.
+          </div>
+
+          <div className="mt-6 text-xs text-slate-400">Team: 6 dedicated members · Fast turnaround · SSL & DNS support</div>
+        </motion.div>
+      </div>
+    </section>
+  );
 }
 
-export default Hero
 
