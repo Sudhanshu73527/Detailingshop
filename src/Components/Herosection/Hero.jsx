@@ -145,7 +145,7 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
             <a
-              href="https://www.godaddy.com/" 
+              href="https://www.webala.in/" 
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold px-5 py-3 rounded-lg shadow-lg hover:scale-[1.02] transition-transform"
