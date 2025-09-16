@@ -102,7 +102,7 @@ const Gallary = () => {
             />
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>   
     </section>
   );
 };
